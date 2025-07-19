@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Import Poppins font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="card">
+            <h1>My To-Do List</h1>
+
+            <!-- Input form -->
+            <form method="POST" action="/add" class="task-form">
+                <input type="text" name="title" placeholder="Enter a new task..." required>
+                <button type="submit">Add Task</button>
+            </form>
+
+            <!-- Task list -->
+            <ul class="task-list">
+                {% for task in tasks %}
+                    <li class="task-item">
+                        <span class="{% if task.completed %}completed{% endif %}">{{ task.title }}</span>
+                        <div class="actions">
+                            {% if not task.completed %}
+                                <a href="/complete/{{ task.id }}" class="btn complete" title="Mark as complete">✅</a>
+                            {% endif %}
+                            <a href="/delete/{{ task.id }}" class="btn delete" title="Delete task">🗑️</a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
