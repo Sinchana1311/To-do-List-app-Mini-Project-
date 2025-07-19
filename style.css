@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 60px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #4e342e;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.task-form {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.task-form input[type="text"] {
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 15px;
+    border: 1.5px solid #d7ccc8;
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    background-color: #fefefe;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.task-form input[type="text"]:focus {
+    border-color: #bcaaa4;
+}
+
+.task-form button {
+    padding: 12px 18px;
+    background: linear-gradient(to right, #8d6e63, #5d4037);
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.task-form button:hover {
+    opacity: 0.9;
+}
+
+/* TASK LIST */
+.task-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid #efebe9;
+    transition: background-color 0.3s;
+}
+
+.task-item:hover {
+    background-color: #fef4ef;
+}
+
+.task-item span {
+    font-size: 16px;
+    color: #5d4037;
+}
+
+.task-item .completed {
+    text-decoration: line-through;
+    color: #a1887f;
+}
+
+/* ACTION BUTTONS */
+.actions .btn {
+    font-size: 18px;
+    margin-left: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.actions .btn:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.btn.complete {
+    color: #43a047;
+}
+
+.btn.delete {
+    color: #8e24aa;
+}
